@@ -4,11 +4,7 @@ public class Lion extends Carnivore {
 
     public Lion(String name) {
     	super(name);
-    }
-
-	public void sayHello()
-    {
-    	super.sayHello("roooaoaaaaar");
+    	greeting = "roooaoaaaaar";
     }
 
     public void eatMeat()

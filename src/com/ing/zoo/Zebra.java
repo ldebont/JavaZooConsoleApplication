@@ -5,11 +5,7 @@ public class Zebra extends Herbivore {
     public Zebra(String name)
     {
     	super(name);
-    }
-
-    public void sayHello()
-    {
-    	super.sayHello("zebra zebra");
+    	greeting = "zebra zebra";
     }
 
     public void eatLeaves()

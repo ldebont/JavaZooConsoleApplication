@@ -8,12 +8,8 @@ public class Tiger extends Carnivore {
 
     public Tiger(String name) {
 		super(name);
+		greeting = "rraaarww"; 
 	}
-
-    public void sayHello()
-    {
-    	super.sayHello("rraaarww");
-    }
 
     public void eatMeat()
     {
