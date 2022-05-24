@@ -15,9 +15,11 @@ public class Zoo {
         Pig dora = new Pig("dora");
         Tiger wally = new Tiger("wally");
         Zebra marty = new Zebra("marty");
+        Shark harry = new Shark("harry");
+        Koala katie = new Koala("katie");
         
         // Add animals to list
-        Animal[] animals = {henk, elsa, dora, wally, marty};
+        Animal[] animals = {henk, elsa, dora, wally, marty, harry, katie};
                      
         // Initialize scanner
         Scanner scanner = new Scanner(System.in);
