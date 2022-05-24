@@ -53,15 +53,12 @@ public class Zoo {
             	}
         	}
         }
-        
-        // Omnivores respond if either meat or leaves are given
+
+        // Animals with tricks respond if asked to perform tricks
         for (Animal animal : animals) {
-        	if (animal instanceof Omnivore) {
-            	if (input.equals(commands[1])) {        		
-            		((Omnivore) animal).eatLeaves();
-            	}
-            	else if (input.equals(commands[2])) {        		
-            		((Omnivore) animal).eatMeat();
+        	if (animal instanceof Trick) {
+            	if (input.equals(commands[3])) {        		
+            		((Trick) animal).performTrick();
             	}
         	}
         }

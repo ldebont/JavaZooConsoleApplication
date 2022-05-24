@@ -2,7 +2,7 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Pig extends Omnivore {
+public class Pig extends Animal implements Herbivore, Carnivore, Trick {
 
     public String trick;
 
@@ -23,6 +23,7 @@ public class Pig extends Omnivore {
         System.out.println("nomnomnom oink thx");
     }
 
+    @Override
     public void performTrick()
     {
         Random random = new Random();
