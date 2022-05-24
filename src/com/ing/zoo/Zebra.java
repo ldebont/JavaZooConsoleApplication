@@ -8,8 +8,9 @@ public class Zebra extends Herbivore {
     	greeting = "zebra zebra";
     }
 
+    @Override
     public void eatLeaves()
     {  	
-    	super.eatLeaves("munch munch zank yee bra");
+    	System.out.println("munch munch zank yee bra");
     }
 }

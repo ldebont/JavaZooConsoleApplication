@@ -7,8 +7,9 @@ public class Lion extends Carnivore {
     	greeting = "roooaoaaaaar";
     }
 
+    @Override
     public void eatMeat()
     {
-    	super.eatMeat("nomnomnom thx mate");
+    	System.out.println("nomnomnom thx mate");
     }
 }

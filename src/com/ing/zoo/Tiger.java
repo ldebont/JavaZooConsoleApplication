@@ -11,9 +11,10 @@ public class Tiger extends Carnivore {
 		greeting = "rraaarww"; 
 	}
 
+    @Override
     public void eatMeat()
     {
-    	super.eatMeat("nomnomnom oink wubalubadubdub");
+    	System.out.println("nomnomnom oink wubalubadubdub");
     }
 
     public void performTrick()

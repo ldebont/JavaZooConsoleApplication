@@ -1,5 +1,7 @@
 package com.ing.zoo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Zoo {		
@@ -19,7 +21,7 @@ public class Zoo {
         
         // Add animals to list
         Animal[] animals = {henk, elsa, wally, marty};
-                       
+                     
         // Initialize scanner
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
@@ -28,13 +30,31 @@ public class Zoo {
         
         // All animals say hello if none are greeted by name
         if(input.equals(commands[0])) sayHelloToAll(animals);
-        
+                
         // Animal says hello if greeted by name
         for (Animal animal : animals) { 
             if (input.equals(commands[0] + " " + animal.name)) {
             	animal.sayHello();
             	break;
             }
+        }
+               
+        // Herbivores respond if leaves are given
+        for (Animal animal : animals) {
+        	if (animal instanceof Herbivore) {
+            	if (input.equals(commands[1])) {        		
+            		((Herbivore) animal).eatLeaves();
+            	}
+        	}
+        }
+        
+        // Carnivores respond if meat is given
+        for (Animal animal : animals) {
+        	if (animal instanceof Carnivore) {
+            	if (input.equals(commands[2])) {        		
+            		((Carnivore) animal).eatMeat();
+            	}
+        	}
         }
         
         // Print error if input doesn't match any command
@@ -45,7 +65,7 @@ public class Zoo {
 //        	}
 //        }       
     }
-        
+         
     private static void sayHelloToAll(Animal[] animals) {   	
         for (Animal animal : animals) {
     		animal.sayHello();

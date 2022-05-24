@@ -6,8 +6,7 @@ public class Herbivore extends Animal {
 		super(name);
 	}
 
-    public void eatLeaves(String eatText)
+    public void eatLeaves() 
     {
-        System.out.println(eatText);
-    }
+	}
 }

@@ -7,8 +7,9 @@ public class Hippo extends Herbivore {
 		greeting = "splash";
 	}
     
+    @Override
     public void eatLeaves()
     {
-    	super.eatLeaves("munch munch lovely");
+    	System.out.println("munch munch lovely");
     }
 }
