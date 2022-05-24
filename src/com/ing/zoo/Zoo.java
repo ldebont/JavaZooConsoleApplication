@@ -39,7 +39,7 @@ public class Zoo {
 
         String input = scanner.nextLine();
         
-        // Animal says hello if greeted by name
+        // Animal greets if greeted by name
         for (Animal animal : animals) { 
             if (input.equals(commands[0] + " " + animal.name)) {
             	animal.sayHello();
@@ -60,14 +60,11 @@ public class Zoo {
         else if(input.equals(commands[3])) performTricks(animals);
            
         // Print error if input doesn't match any command
-//        for (String command : commands) {
-//        	if (!input.equals(command)) {
-//                System.out.println("Unknown command: " + input);
-//                break;
-//        	}
-//        }       
+        //else System.out.println("Unknown command: " + input); 
+        
+        scanner.close();
     }
-         
+          
     private static void greetAll(Animal[] animals) {   	
         for (Animal animal : animals) {
     		animal.sayHello();
