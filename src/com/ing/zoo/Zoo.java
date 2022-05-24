@@ -1,7 +1,5 @@
 package com.ing.zoo;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Zoo {		
@@ -14,13 +12,12 @@ public class Zoo {
     	// Initialize animals
         Lion henk = new Lion("henk");
         Hippo elsa = new Hippo("elsa");
-        Pig dora = new Pig();
-        dora.name = "dora";
+        Pig dora = new Pig("dora");
         Tiger wally = new Tiger("wally");
         Zebra marty = new Zebra("marty");
         
         // Add animals to list
-        Animal[] animals = {henk, elsa, wally, marty};
+        Animal[] animals = {henk, elsa, dora, wally, marty};
                      
         // Initialize scanner
         Scanner scanner = new Scanner(System.in);
@@ -53,6 +50,18 @@ public class Zoo {
         	if (animal instanceof Carnivore) {
             	if (input.equals(commands[2])) {        		
             		((Carnivore) animal).eatMeat();
+            	}
+        	}
+        }
+        
+        // Omnivores respond if either meat or leaves are given
+        for (Animal animal : animals) {
+        	if (animal instanceof Omnivore) {
+            	if (input.equals(commands[1])) {        		
+            		((Omnivore) animal).eatLeaves();
+            	}
+            	else if (input.equals(commands[2])) {        		
+            		((Omnivore) animal).eatMeat();
             	}
         	}
         }
