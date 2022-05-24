@@ -2,26 +2,22 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Tiger {
-    public String name;
-    public String helloText;
-    public String eatText;
+public class Tiger extends Carnivore {
+
     public String trick;
 
-    public Tiger()
-    {
-    }
+    public Tiger(String name) {
+		super(name);
+	}
 
     public void sayHello()
     {
-        helloText = "rraaarww";
-        System.out.println(helloText);
+    	super.sayHello("rraaarww");
     }
 
     public void eatMeat()
     {
-        eatText = "nomnomnom oink wubalubadubdub";
-        System.out.println(eatText);
+    	super.eatMeat("nomnomnom oink wubalubadubdub");
     }
 
     public void performTrick()
