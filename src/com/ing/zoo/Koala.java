@@ -1,4 +1,7 @@
-package com.ing.zoo;
+package com.ing.zoo.herbivores;
+
+import com.ing.zoo.base.Animal;
+import com.ing.zoo.interfaces.Herbivore;
 
 public class Koala extends Animal implements Herbivore {
 

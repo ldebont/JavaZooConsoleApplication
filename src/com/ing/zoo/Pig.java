@@ -1,6 +1,11 @@
-package com.ing.zoo;
+package com.ing.zoo.omnivores;
 
 import java.util.Random;
+
+import com.ing.zoo.base.Animal;
+import com.ing.zoo.interfaces.Carnivore;
+import com.ing.zoo.interfaces.Herbivore;
+import com.ing.zoo.interfaces.Trick;
 
 public class Pig extends Animal implements Herbivore, Carnivore, Trick {
 

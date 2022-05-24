@@ -1,4 +1,7 @@
-package com.ing.zoo;
+package com.ing.zoo.carnivores;
+
+import com.ing.zoo.base.Animal;
+import com.ing.zoo.interfaces.Carnivore;
 
 public class Shark extends Animal implements Carnivore {
 
@@ -10,6 +13,6 @@ public class Shark extends Animal implements Carnivore {
 	@Override
 	public void eatMeat() 
 	{
-		System.out.println("Chomp chomp");
+		System.out.println("chomp chomp chomp");
 	}
 }

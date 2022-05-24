@@ -2,6 +2,18 @@ package com.ing.zoo;
 
 import java.util.Scanner;
 
+import com.ing.zoo.base.Animal;
+import com.ing.zoo.carnivores.Lion;
+import com.ing.zoo.carnivores.Shark;
+import com.ing.zoo.carnivores.Tiger;
+import com.ing.zoo.herbivores.Hippo;
+import com.ing.zoo.herbivores.Koala;
+import com.ing.zoo.herbivores.Zebra;
+import com.ing.zoo.interfaces.Carnivore;
+import com.ing.zoo.interfaces.Herbivore;
+import com.ing.zoo.interfaces.Trick;
+import com.ing.zoo.omnivores.Pig;
+
 public class Zoo {		
 	
     public static void main(String[] args)
@@ -27,9 +39,6 @@ public class Zoo {
 
         String input = scanner.nextLine();
         
-        // All animals say hello if none are greeted by name
-        if(input.equals(commands[0])) sayHelloToAll(animals);
-                
         // Animal says hello if greeted by name
         for (Animal animal : animals) { 
             if (input.equals(commands[0] + " " + animal.name)) {
@@ -37,34 +46,19 @@ public class Zoo {
             	break;
             }
         }
-               
-        // Herbivores respond if leaves are given
-        for (Animal animal : animals) {
-        	if (animal instanceof Herbivore) {
-            	if (input.equals(commands[1])) {        		
-            		((Herbivore) animal).eatLeaves();
-            	}
-        	}
-        }
         
+        // All animals say hello if none are greeted by name
+        if(input.equals(commands[0])) greetAll(animals);
+                    
+        // Herbivores respond if leaves are given
+        else if(input.equals(commands[1])) feedHerbivores(animals);
+                     
         // Carnivores respond if meat is given
-        for (Animal animal : animals) {
-        	if (animal instanceof Carnivore) {
-            	if (input.equals(commands[2])) {        		
-            		((Carnivore) animal).eatMeat();
-            	}
-        	}
-        }
+        else if(input.equals(commands[2])) feedCarnivors(animals);
 
         // Animals with tricks respond if asked to perform tricks
-        for (Animal animal : animals) {
-        	if (animal instanceof Trick) {
-            	if (input.equals(commands[3])) {        		
-            		((Trick) animal).performTrick();
-            	}
-        	}
-        }
-        
+        else if(input.equals(commands[3])) performTricks(animals);
+           
         // Print error if input doesn't match any command
 //        for (String command : commands) {
 //        	if (!input.equals(command)) {
@@ -74,9 +68,33 @@ public class Zoo {
 //        }       
     }
          
-    private static void sayHelloToAll(Animal[] animals) {   	
+    private static void greetAll(Animal[] animals) {   	
         for (Animal animal : animals) {
     		animal.sayHello();
+        }
+    }
+    
+    private static void feedHerbivores(Animal[] animals) {
+        for (Animal animal : animals) {
+        	if (animal instanceof Herbivore) {
+        		((Herbivore) animal).eatLeaves();
+        	}
+        }
+    }
+    
+    private static void feedCarnivors(Animal[] animals) {
+        for (Animal animal : animals) {
+        	if (animal instanceof Carnivore) {
+        		((Carnivore) animal).eatMeat();
+        	}
+        }
+    }
+    
+    private static void performTricks(Animal[] animals) {
+        for (Animal animal : animals) {
+        	if (animal instanceof Trick) {
+        		((Trick) animal).performTrick();
+        	}
         }
     }
 }
